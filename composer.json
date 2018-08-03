@@ -1,5 +1,5 @@
 {
-    "name": "darealfive/yii2-darealfive-base",
+    "name": "darealfive/yii2-base",
     "description": "A collection of some helper/base classes where my other packages may depend on",
     "license": "BSD-3-Clause",
     "type": "yii2-extension",
