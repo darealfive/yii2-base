@@ -1,0 +1,21 @@
+{
+    "name": "darealfive/yii2-darealfive-base",
+    "description": "A collection of some helper/base classes where my other packages may depend on",
+    "license": "BSD-3-Clause",
+    "type": "yii2-extension",
+    "authors": [
+        {
+            "name": "Darealfive",
+            "email": "darealfive@gmx.de"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "darealfive\\base\\": ""
+        }
+    }
+}
