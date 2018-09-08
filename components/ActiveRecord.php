@@ -1,11 +1,11 @@
 <?php
 
-namespace darealfive\base;
+namespace darealfive\base\components;
 
 /**
  * Class ActiveRecord
  *
- * @package darealfive\base
+ * @package darealfive\base\components
  */
 abstract class ActiveRecord extends \yii\db\ActiveRecord
 {

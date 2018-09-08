@@ -1,6 +1,6 @@
 <?php
 
-namespace darealfive\base;
+namespace darealfive\base\components;
 
 use yii\db\Expression;
 use yii\behaviors\TimestampBehavior;
@@ -12,7 +12,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $created_at
  * @property string $updated_at
  *
- * @package darealfive\base
+ * @package darealfive\base\components
  */
 abstract class CacheableActiveRecord extends ActiveRecord
 {
