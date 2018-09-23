@@ -12,7 +12,7 @@ use BadMethodCallException;
  *
  * @package darealfive\base\behaviors\property
  */
-abstract class Behavior extends \yii\base\Behavior
+abstract class Behavior extends \darealfive\base\behaviors\Behavior
 {
     /**
      * @var string the property name added for the owner. Defaults to null meaning you are allowed to initialise it.
