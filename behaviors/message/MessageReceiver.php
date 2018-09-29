@@ -26,7 +26,7 @@ class MessageReceiver extends Behavior
     public function handleMessageSent(callable $handler, $data = null, $append = true)
     {
         Event::on(
-            'darealfive\base\behaviors\message\MessageEventInterface',
+            MessageEventInterface::class,
             MessageEventInterface::EVENT_MESSAGE_SENT,
             $handler,
             $data,
