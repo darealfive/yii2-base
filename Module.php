@@ -22,8 +22,6 @@ abstract class Module extends \yii\base\Module
      */
     public static function messageSenderBehavior(Component $sender): MessageSender
     {
-        $behavior = new MessageSender();
-
-        return $sender->attachBehavior(MessageSender::class, $behavior);
+        return $sender->attachBehavior(MessageSender::class, new MessageSender());
     }
 }

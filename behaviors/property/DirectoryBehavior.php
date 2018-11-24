@@ -5,6 +5,7 @@
 
 namespace darealfive\base\behaviors\property;
 
+use yii\base\Exception;
 use yii\helpers\FileHelper;
 
 /**
@@ -26,6 +27,8 @@ class DirectoryBehavior extends Behavior
      *
      * @param mixed|Closure $value path to the directory.
      *
+     * @throws PropertyException
+     * @throws Exception
      * @access protected
      */
     public function set($propertyValue)
