@@ -17,6 +17,8 @@ trait ModelFinder
      * Finds the model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      *
+     * @see \darealfive\base\interfaces\ModelFinder::findModel() this trait is covering
+     *
      * @param mixed        $id    the primary key of the model
      * @param ActiveRecord $model optional model to find a model of this class
      *
@@ -38,7 +40,7 @@ trait ModelFinder
     }
 
     /**
-     * Gets the desired model to be found by @see findModel
+     * Gets the desired model to be found by @see findModel.
      *
      * @return ActiveRecord
      */
