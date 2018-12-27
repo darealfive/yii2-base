@@ -13,6 +13,8 @@ use darealfive\base\controllers\Controller;
  * @package darealfive\base\controllers\actions
  *
  * @property Controller $controller
+ *
+ * @method run() runs the action
  */
 abstract class Action extends \yii\base\Action
 {
