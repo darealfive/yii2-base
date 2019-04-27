@@ -11,9 +11,9 @@ use yii\base\Event;
  */
 class Migration extends \yii\db\Migration
 {
-    const EVENT_INIT = 'init';
+    public const EVENT_INIT = 'init';
 
-    public $tableOptions = null;
+    public $tableOptions;
 
     public function init()
     {
@@ -34,9 +34,10 @@ class Migration extends \yii\db\Migration
      *
      * @see buildForeignKeyName for full documentation
      */
-    public function addForeignKeyAutoName($table, $columns, $refTable, $refColumns, $delete = null, $update = null)
+    public function addForeignKeyAutoName($table, $columns, $refTable, $refColumns, $delete = null,
+                                          $update = null): void
     {
-        parent::addForeignKey(
+        $this->addForeignKey(
             self::buildForeignKeyName($table, $columns, $refTable, $refColumns),
             $table,
             $columns,
@@ -58,7 +59,7 @@ class Migration extends \yii\db\Migration
      *
      * @return string
      */
-    public static function buildForeignKeyName($table, $columns, $refTable, $refColumns)
+    public static function buildForeignKeyName($table, $columns, $refTable, $refColumns): string
     {
         $columns    = [$columns];
         $refColumns = [$refColumns];
@@ -76,9 +77,9 @@ class Migration extends \yii\db\Migration
      *
      * @see buildForeignKeyName for full documentation
      */
-    public function createIndexAutoName($table, $columns, $unique = false)
+    public function createIndexAutoName($table, $columns, $unique = false): void
     {
-        parent::createIndex(
+        $this->createIndex(
             self::buildIndexName($table, $columns),
             $table,
             $columns,
@@ -95,7 +96,7 @@ class Migration extends \yii\db\Migration
      *
      * @return string
      */
-    public static function buildIndexName($table, $columns)
+    public static function buildIndexName($table, $columns): string
     {
         $columns = (array) $columns;
 

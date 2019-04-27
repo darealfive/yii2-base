@@ -16,7 +16,7 @@ use yii\behaviors\TimestampBehavior;
  */
 abstract class CacheableActiveRecord extends ActiveRecord
 {
-    public function behaviors()
+    public function behaviors(): array
     {
         return array_merge(
             parent::behaviors(),
@@ -32,7 +32,7 @@ abstract class CacheableActiveRecord extends ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'created_at' => 'Created At',

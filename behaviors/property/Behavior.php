@@ -18,7 +18,7 @@ abstract class Behavior extends \darealfive\base\behaviors\Behavior
      * @var string the property name added for the owner. Defaults to null meaning you are allowed to initialise it.
      * @access private
      */
-    private $_propertyName = null;
+    private $_propertyName;
 
     /**
      * @var mixed any kind of value which is to be associated with $_propertyName.
@@ -36,9 +36,9 @@ abstract class Behavior extends \darealfive\base\behaviors\Behavior
      *
      * @access public
      */
-    public function setPropertyName($propertyName)
+    public function setPropertyName($propertyName): void
     {
-        if (!is_null($this->_propertyName)) {
+        if ($this->_propertyName !== null) {
 
             throw new BadMethodCallException('Do not redefine property more than once');
         }
@@ -62,7 +62,7 @@ abstract class Behavior extends \darealfive\base\behaviors\Behavior
      *
      * @access protected
      */
-    protected function set($propertyValue)
+    protected function set($propertyValue): void
     {
         $this->_propertyValue = $propertyValue;
     }
@@ -70,7 +70,7 @@ abstract class Behavior extends \darealfive\base\behaviors\Behavior
     /**
      * {@inheritdoc}
      */
-    public function canGetProperty($name, $checkVars = true)
+    public function canGetProperty($name, $checkVars = true): bool
     {
         if ($this->propertyExists($name)) {
             return true;
@@ -82,7 +82,7 @@ abstract class Behavior extends \darealfive\base\behaviors\Behavior
     /**
      * {@inheritdoc}
      */
-    public function canSetProperty($name, $checkVars = true)
+    public function canSetProperty($name, $checkVars = true): bool
     {
         if ($this->propertyExists($name)) {
             return true;
@@ -147,7 +147,7 @@ abstract class Behavior extends \darealfive\base\behaviors\Behavior
      * @access private
      * @return bool
      */
-    private function propertyExists($propertyName)
+    private function propertyExists($propertyName): bool
     {
         return $this->_propertyName === $propertyName;
     }

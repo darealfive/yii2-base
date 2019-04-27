@@ -5,6 +5,7 @@
 
 namespace darealfive\base\behaviors\property;
 
+use Closure;
 use yii\base\Exception;
 use yii\helpers\FileHelper;
 
@@ -25,13 +26,13 @@ class DirectoryBehavior extends Behavior
     /**
      * Ensures that whenever $owner is setting the property the corresponding directory exists.
      *
-     * @param mixed|Closure $value path to the directory.
+     * @param mixed|Closure $propertyValue path to the directory.
      *
      * @throws PropertyException
      * @throws Exception
      * @access protected
      */
-    public function set($propertyValue)
+    public function set($propertyValue):void
     {
         parent::set($propertyValue);
         if (!is_dir($directory = $this->get())) {

@@ -23,7 +23,7 @@ class MessageReceiver extends Behavior
      * @param bool     $append  whether to append new event handler to the end of the existing handler list. If `false`,
      *                          the new handler will be inserted at the beginning of the existing handler list.
      */
-    public function handleMessageSent(callable $handler, $data = null, $append = true)
+    public function handleMessageSent(callable $handler, $data = null, $append = true): void
     {
         Event::on(
             MessageEventInterface::class,

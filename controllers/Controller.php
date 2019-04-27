@@ -19,10 +19,10 @@ abstract class Controller extends \yii\web\Controller
     /**
      * Action id's of CRUD actions
      */
-    const CREATE = 'create';
-    const READ = 'view';
-    const UPDATE = 'update';
-    const DELETE = 'delete';
+    public const CREATE = 'create';
+    public const READ = 'view';
+    public const UPDATE = 'update';
+    public const DELETE = 'delete';
 
-    const INDEX = 'index';
+    public const INDEX = 'index';
 }

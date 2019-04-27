@@ -6,9 +6,10 @@
 namespace darealfive\base\controllers\actions;
 
 use darealfive\base\controllers\Controller;
+use yii\base\ActionEvent;
 
 /**
- * Class Action
+ * Class Action defines additional events.
  *
  * @package darealfive\base\controllers\actions
  *

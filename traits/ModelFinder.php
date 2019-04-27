@@ -30,8 +30,7 @@ trait ModelFinder
         /*
          * Lazy pattern
          */
-        $model = $model ?? $this->getModel();
-        if (($model = $model::findOne($id)) !== null) {
+        if (($model = ($model ?? $this->getModel())::findOne($id)) !== null) {
 
             return $model;
         }
@@ -44,5 +43,5 @@ trait ModelFinder
      *
      * @return ActiveRecord
      */
-    protected abstract function getModel(): ActiveRecord;
+    abstract protected function getModel(): ActiveRecord;
 }
