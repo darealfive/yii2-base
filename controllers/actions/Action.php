@@ -19,4 +19,18 @@ use yii\base\ActionEvent;
  */
 abstract class Action extends \yii\base\Action
 {
+    public const EVENT_BEFORE_RUN = 'beforeRun';
+
+    public function beforeRun(): bool
+    {
+        if (parent::beforeRun()) {
+
+            $event = new ActionEvent($this);
+            $this->trigger(static::EVENT_BEFORE_RUN, $event);
+
+            return $event->isValid;
+        }
+
+        return false;
+    }
 }
